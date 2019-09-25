@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Album } from '../album.model';
 
 @Component({
@@ -10,6 +10,12 @@ export class AlbumListComponent implements OnInit {
 albumsArray: Album [];
   titleCounter = 1;
   constructor() { }
+  @Output()
+  lastClicked: EventEmitter<Album> = new EventEmitter<Album>();
+
+  showLastAlbum(){
+    console.log(this.albumsArray);
+  }
 
   ngOnInit() {
     const interval = setInterval(() => this.titleCounter++, 2000);
@@ -60,5 +66,7 @@ albumsArray: Album [];
       }];
     console.log(this.albumsArray);
   }
-
+  parentFunctionHandler(album) {
+    alert('Album ' + album.albumName + ' was sent from the album card component');
+}
 }

@@ -7,4 +7,7 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "My Angular Albums";
+  handler(album) {
+    alert('Album ' + album.albumName + ' was sent from the album card component');
+}
 }
