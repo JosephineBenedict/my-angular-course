@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AlbumsModule } from './albums/albums.module';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { AlbumsModule } from './albums/albums.module';
     ReverseStrPipe,
     AboutComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, AlbumsModule
+    HttpClientModule, AlbumsModule, ReactiveFormsModule
   ], 
   providers: [],
   bootstrap: [AppComponent]
