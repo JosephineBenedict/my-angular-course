@@ -9,12 +9,11 @@ import { ReverseStrPipe } from './reverse-str.pipe';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AlbumsModule } from './albums/albums.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlbumListComponent,
-    AlbumCardComponent,
     ReverseStrPipe,
     AboutComponent,
     NavbarComponent,
@@ -23,7 +22,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, AlbumsModule
   ], 
   providers: [],
   bootstrap: [AppComponent]

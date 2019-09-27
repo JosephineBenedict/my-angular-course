@@ -8,7 +8,14 @@ import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
   { path: "", redirectTo: "/about", pathMatch: "full" },
   { path: "about", component: AboutComponent },
-  { path: "albums", component: AlbumListComponent },
+  {
+    path: "albums", //Angular 8 Notation with Promise
+    loadChildren: () => import('./albums/albums.module')
+                        .then(mod => {
+                        console.log('in promise loadChildren');
+                        return mod.AlbumsModule;
+                        }),
+},
   { path: "**", component: NotfoundComponent, pathMatch: "full" }
 ];
 
